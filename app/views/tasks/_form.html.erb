@@ -3,5 +3,8 @@
   <%= f.text_field :title %>
   <%= f.label :details %>
   <%= f.text_field :details %>
+  <% if !@task.new_record? %>
+    <%= f.input :completed, label: "Completed?" %>
+  <% end %>
   <%= f.submit %>
 <% end %>
