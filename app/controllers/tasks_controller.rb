@@ -4,7 +4,7 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  def show;  end
+  def show; end
 
   def new
     @task = Task.new
@@ -16,7 +16,7 @@ class TasksController < ApplicationController
     redirect_to tasks_path(@task)
   end
 
-  def edit;  end
+  def edit; end
 
   def update
     @task.update(task_params)
@@ -26,6 +26,10 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     redirect_to tasks_path
+  end
+
+  def new_record?
+    @new_record
   end
 
   private
